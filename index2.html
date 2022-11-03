@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>create animations with javascript</title>
+</head>
+<body>
+      <canvas id="myCanvas" style="background:#000 ; height:100vh; width: 100%;">
+      </canvas>
+      <script>
+            var canvas=document.getElementById("myCanvas");
+            var ctx=canvas.getContext("2d");
+            var ball={x:100,y:90,dx:2,dy:2,color:"red"}
+
+
+            function ani(){
+                  if(ball.y==100){
+                        ball.dy= -ball.dy;
+                  }
+                  if(ball.x==100){
+                        ball.dx= -ball.dx;
+                  }
+                  ctx.clearRect(0,0,800,500)
+                  ball.x=ball.x+ball.dx;
+                  ball.y=ball.y+ball.dy;
+                  ctx.fillStyle=ball.color;
+                  ctx.fillRect(ball.x,ball.y,30,30);
+
+            }
+            setInterval(ani,22)
+
+      </script>
+</body>
+</html>
